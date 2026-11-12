@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Group Research Proposal Worksheet — Sessions 3 &amp; 4</title>
+  <link rel="stylesheet" href="./assets/session3-practice.css">
+  <script src="./assets/session3-practice-pdf.js" defer></script>
+  <script src="./assets/session3-practice.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#worksheet-panels">Skip to worksheet</a>
+  <main class="workbook">
+    <header class="workbook-header">
+      <p class="course-label">Research Skills, Method &amp; AI — Sessions 3 &amp; 4</p>
+      <span class="practice-label">Group Assessment · Graded</span>
+      <h1>Group Research Proposal Worksheet — Sessions 3 &amp; 4</h1>
+      <p class="subtitle">From literature search to qualitative research design.</p>
+      <div class="group-info">
+        <fieldset class="group-members"><legend>Group Members &amp; Contribution (%)</legend><div class="member-column-labels" aria-hidden="true"><span>Group member</span><span>Contribution (%)</span><span></span></div><div id="member-rows"></div><div class="member-actions"><button type="button" class="button small" id="add-member">+ Add Group Member</button><p id="contribution-total" role="status" aria-live="polite"></p></div><p class="field-help">Contributions should add up to 100%.</p></fieldset>
+        <div class="group-number-field"><label for="group-number">Group Number <span aria-hidden="true">*</span></label><input id="group-number" type="text" data-field="groupNumber" inputmode="numeric" required placeholder="e.g., 3"></div>
+      </div>
+    </header>
+
+    <section class="save-panel" aria-label="Save and export your worksheet">
+      <div class="save-heading"><strong id="save-status" role="status" aria-live="polite">Loading your worksheet…</strong><span>Work through the four parts at your own pace.</span></div>
+      <div class="toolbar">
+        <button type="button" class="button primary" id="export-pdf">Export Final Report (PDF)</button>
+        <button type="button" class="button" id="save-progress">Save Progress <span class="button-detail">JSON</span></button>
+        <button type="button" class="button" id="import-progress">Import Progress</button>
+        <button type="button" class="button quiet" id="reset-worksheet">Reset Worksheet</button>
+        <input type="file" id="import-file" accept=".json,application/json" hidden aria-label="Choose a worksheet JSON backup">
+      </div>
+      <p class="storage-note">Responses are saved only in this browser on this device. Browser storage may be cleared. Use <strong>Save Progress</strong> for a portable backup, and <strong>Import Progress</strong> to restore it. Nothing is sent to a server.</p>
+      <p id="feedback" class="feedback" role="status" aria-live="polite" hidden></p>
+      <div id="storage-conflict" class="conflict" hidden><p>Another worksheet tab has changed the saved work. Your responses are still here. Download a backup before choosing which version to keep.</p><div class="toolbar"><button type="button" class="button" id="load-latest">Load Latest Saved Work</button><button type="button" class="button" id="keep-current">Keep This Tab’s Work</button></div></div>
+    </section>
+
+    <nav class="worksheet-tabs" role="tablist" aria-label="Worksheet parts">
+      <button type="button" id="tab-find" role="tab" aria-controls="panel-find" aria-selected="true" data-tab="find">Part 1 &#8212; Find Academic Papers</button>
+      <button type="button" id="tab-evaluate" role="tab" aria-controls="panel-evaluate" aria-selected="false" tabindex="-1" data-tab="evaluate">Part 2 &#8212; Literature Review</button>
+      <button type="button" id="tab-synthesize" role="tab" aria-controls="panel-synthesize" aria-selected="false" tabindex="-1" data-tab="synthesize">Part 3 &#8212; Qualitative Methodology</button>
+      <button type="button" id="tab-cite" role="tab" aria-controls="panel-cite" aria-selected="false" tabindex="-1" data-tab="cite">Part 4 &#8212; Citations &amp; References</button>
+    </nav>
+
+    <div id="worksheet-panels">
+      <section id="panel-find" class="worksheet-part" role="tabpanel" aria-labelledby="tab-find">
+        <div class="part-heading"><span class="part-letter">1</span><div><h2>Part 1 &#8212; Find Academic Papers</h2><p>Turn your research question into an academic literature search.</p><a class="review-slides" href="session-03-literature-review-theoretical-framework.html#10" target="_blank" rel="noopener noreferrer">Review Slides 10–11</a></div></div>
+        <div class="field-card research-card"><label for="research-question">1. Research Question</label><textarea id="research-question" data-field="researchQuestion" rows="4" placeholder="Enter your research question from Session 2."></textarea></div>
+        <div class="field-card concepts-card"><h3>2. Main Concepts and Alternative Keywords</h3><div class="concept-labels" aria-hidden="true"><span>Main concept</span><span>Alternative keywords or related terms</span><span></span></div><div id="concept-rows"></div><button type="button" id="add-concept" class="button small">+ Add Concept</button></div>
+        <div class="field-card search-card"><label for="search-string">3. Search String</label><p class="field-help" id="search-help">Use AND, OR, NOT, quotation marks, and truncation where appropriate. Syntax varies across databases.</p><textarea id="search-string" data-field="searchString" rows="4" aria-describedby="search-help" placeholder='("keyword A" OR "keyword B") AND ("keyword C" OR "keyword D")'></textarea></div>
+        <div class="field-card database-card"><label for="search-database">4. Search Database</label><select id="search-database" data-field="database"><option value="">Choose a database</option><option value="web-of-science">Web of Science</option><option value="google-scholar">Google Scholar</option><option value="other">Other</option></select><div id="database-other-wrap" class="other-database" hidden><label for="database-other">Database name</label><input type="text" id="database-other" data-field="databaseOther" placeholder="Enter the database name"></div></div>
+        <div class="field-card results-card"><h3>5. Initial Search Results</h3><p class="field-help">Capture your initial search results. You do not need to analyze every result yet.</p><div class="upload-area" id="upload-area"><label for="screenshot-file">Upload or replace your screenshot</label><input type="file" id="screenshot-file" accept="image/png,image/jpeg,image/webp" aria-describedby="upload-help"><p class="field-help" id="upload-help">Choose a PNG, JPG, or WebP image, or drop it here. Large images are optimized for browser storage.</p><figure id="screenshot-preview" hidden><img id="screenshot-image" alt="Your initial academic search results"><figcaption id="screenshot-caption"></figcaption></figure><button type="button" id="remove-screenshot" class="button small" hidden>Remove Screenshot</button></div></div>
+      </section>
+
+      <section id="panel-evaluate" class="worksheet-part proposal-part" role="tabpanel" aria-labelledby="tab-evaluate" hidden>
+        <div class="part-heading"><span class="part-letter">2</span><div><h2>Part 2 &#8212; Literature Review</h2><p>Select at least five relevant academic papers. Write a short literature review connecting their findings rather than summarizing each paper separately.</p></div></div>
+        <div class="field-card"><label for="review-structure">Literature Review Structure</label><select id="review-structure" data-field="reviewStructure"><option value="">Choose a structure</option><option value="funnel">Funnel</option><option value="thematic">Thematic</option></select><label class="proposal-answer-label" for="literature-review">Your Literature Review</label><textarea id="literature-review" class="proposal-answer" data-field="literatureReview" rows="15" placeholder="Connect the findings of at least five relevant academic papers. Use appropriate in-text citations."></textarea></div>
+      </section>
+
+      <section id="panel-synthesize" class="worksheet-part proposal-part" role="tabpanel" aria-labelledby="tab-synthesize" hidden>
+        <div class="part-heading"><span class="part-letter">3</span><div><h2>Part 3 &#8212; Qualitative Methodology</h2><p>Choose one qualitative research method. Explain why it fits your research question and briefly describe how you would collect the data. You do not need to conduct the research.</p></div></div>
+        <div class="field-card"><label for="methodology">Proposed Qualitative Methodology</label><textarea id="methodology" class="proposal-answer" data-field="methodology" rows="15" placeholder="Explain your chosen method, why it fits your research question, and how you would collect the data."></textarea></div>
+      </section>
+
+      <section id="panel-cite" class="worksheet-part proposal-part" role="tabpanel" aria-labelledby="tab-cite" hidden>
+        <div class="part-heading"><span class="part-letter">4</span><div><h2>Part 4 &#8212; Citations &amp; References</h2><p>Provide at least five academic references in APA format. Use appropriate in-text citations in your literature review. Correct use of both narrative and parenthetical citation forms may earn bonus points.</p></div></div>
+        <div class="field-card"><label for="references">Academic References (APA)</label><textarea id="references" class="proposal-answer" data-field="references" rows="15" placeholder="Paste your academic references in APA format. Separate references with a blank line."></textarea></div>
+      </section>
+    </div>
+    <div class="part-navigation"><button type="button" class="button" id="previous-part">← Previous Part</button><span id="part-position"></span><button type="button" class="button" id="next-part">Next Part →</button></div>
+    <footer class="workbook-footer"><span>KEDGE Business School · Sessions 3 &amp; 4</span><span>One group project, developed progressively.</span></footer>
+  </main>
+</body>
+</html>
